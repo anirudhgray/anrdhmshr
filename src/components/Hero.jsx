@@ -41,7 +41,7 @@ export default function Hero() {
                 <Me className="md:block hidden px-6 mb-5" />
                 <MeFirst className="md:hidden sm:w-auto xs:w-[16rem] w-[13rem] flex mx-6" />
                 <MeLast className="md:hidden sm:w-auto xs:w-[13rem] w-[11rem] flex mx-6" />
-                <div className={`flex flex-col items-center transition-opacity ease-linear duration-[2000ms] delay-1000 ${showSub ? "opacity-100" : "opacity-0"}`}>
+                <div className={`flex flex-col items-center transition-opacity ease-linear duration-[2000ms] delay-1000 ${showSub ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                     <p className='text-gray-400'>Software Developer</p>
                     <div className="sm:mt-5 mt-4 sm:text-2xl text-3xl flex flex-row justify-center md:gap-4 gap-6 text-gray-400">
                     <a className='hover:text-white' aria-label='GitHub' target={"_blank"} referrerPolicy="no-referrer" href={"https://github.com/anirudhgray"}>
@@ -50,10 +50,10 @@ export default function Hero() {
                     <a className='hover:text-white' aria-label='LinkedIn' target={"_blank"} referrerPolicy="no-referrer" href={"https://www.linkedin.com/in/anirudh-mishra/"}>
                         <AiOutlineLinkedin />
                     </a>
-                    <a className='hover:text-white' aria-label='email' target={"_blank"} referrerPolicy="no-referrer" href={" mailto:anirudh04mishra@gmail.com"}>
+                    <a className='hover:text-white' aria-label='email' target={"_blank"} referrerPolicy="no-referrer" href={"mailto:anirudh04mishra@gmail.com"}>
                         <AiOutlineMail />
                     </a>
-                    <a className='hover:text-white' aria-label='resume' target={"_blank"} referrerPolicy="no-referrer" href={"https://drive.google.com/file/d/1o2ZSH3BASbvPeOAQcxOw1ulz_74Z5mxT/view?usp=sharing"}>
+                    <a className='hover:text-white' aria-label='resume' target={"_blank"} referrerPolicy="no-referrer" href={import.meta.env.VITE_RESUME_URL}>
                         <AiFillFileText />
                     </a>
                     </div>
