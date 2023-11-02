@@ -9,9 +9,21 @@ import {
   AiOutlineMail,
   AiFillFileText,
 } from 'react-icons/ai';
+import './Hero.css';
 
 const Hero: React.FC = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
+    const storedDarkMode = localStorage.getItem('theme');
+    if (storedDarkMode !== null) {
+      console.log(storedDarkMode);
+      setDarkMode(storedDarkMode === 'dark');
+    } else {
+      // Prefer the color scheme (light/dark) from the system
+      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+
     // desktop
     anime({
       targets: '.line-drawing-demo .lines path',
@@ -42,6 +54,12 @@ const Hero: React.FC = () => {
     }, 3000);
   }, []);
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem('theme', !darkMode ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', !darkMode);
+  };
+
   const [showSub, setShowSub] = useState(false);
   return (
     <>
@@ -52,6 +70,17 @@ const Hero: React.FC = () => {
         T
       </span>
       <div className="line-drawing-demo min-h-screen min-w-screen flex flex-col items-center justify-center md:gap-6 sm:gap-10 gap-8">
+        <div className="absolute top-0 right-0 m-4">
+          {/* Dark mode toggle */}
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              onChange={toggleDarkMode}
+            />
+            <span className="slider round"></span>
+          </label>
+        </div>
         <Me className="md:block hidden px-6 mb-5" />
         <MeFirst className="md:hidden sm:w-auto xs:w-[16rem] w-[13rem] flex mx-6" />
         <MeLast className="md:hidden sm:w-auto xs:w-[13rem] w-[11rem] flex mx-6" />
