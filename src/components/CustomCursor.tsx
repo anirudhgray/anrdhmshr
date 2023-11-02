@@ -3,7 +3,13 @@ import React, { useEffect, useState } from 'react';
 import './CustomCursor.css';
 
 const CustomCursor: React.FC = () => {
-  const [position, setPosition] = useState({ x: -10, y: -10 });
+  const [position, setPosition] = useState<{
+    x: number | null;
+    y: number | null;
+  }>({
+    x: null,
+    y: null,
+  });
   const [isPointer, setIsPointer] = useState(false);
 
   // Check if the device has a mouse

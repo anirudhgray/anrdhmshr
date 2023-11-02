@@ -5,3 +5,8 @@
 body {
   cursor: none;
 }
+
+/* no scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
