@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay: function (_, i) {
         return i * 250;
       },
       direction: 'alternate',
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay: function (_, i) {
         return i * 250;
       },
       direction: 'alternate',
