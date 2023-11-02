@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { ReactComponent as Me } from '../assets/me.svg'
-import { ReactComponent as MeFirst } from '../assets/meFirst.svg'
-import { ReactComponent as MeLast } from '../assets/meLast.svg'
-import anime from 'animejs/lib/anime.es.js'
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineMail, AiFillFileText } from 'react-icons/ai'
+import React, { useEffect, useState } from 'react';
+import { ReactComponent as Me } from '../assets/me.svg';
+import { ReactComponent as MeFirst } from '../assets/meFirst.svg';
+import { ReactComponent as MeLast } from '../assets/meLast.svg';
+import anime from 'animejs/lib/anime.es.js';
+import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineMail, AiFillFileText } from 'react-icons/ai';
 
-export default function Hero() {
+const Hero: React.FC = () => {
     useEffect(() => {
         // desktop
         anime({
@@ -62,3 +62,5 @@ export default function Hero() {
         </>
     )
 }
+
+export default Hero
