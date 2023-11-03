@@ -14,6 +14,7 @@ const CustomCursor: React.FC = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isSpecialElement, setIsSpecialElement] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [isMusicElement, setIsMusicElement] = useState(false);
 
   // Check if the device has a mouse
   const hasMouse = window.matchMedia('(pointer:fine)').matches;
@@ -37,6 +38,9 @@ const CustomCursor: React.FC = () => {
         );
         setIsSpecialElement(
           (e.target as Element).classList.contains('special-cursor-element'),
+        );
+        setIsMusicElement(
+          (e.target as Element).classList.contains('music-cursor-element'),
         );
       };
       document.addEventListener('mouseover', checkIfPointer);
@@ -82,7 +86,24 @@ const CustomCursor: React.FC = () => {
       } ${!isSpecialElement ? (isClicked ? 'cursor-clicked' : '') : ''}`}
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
-      <div className="dot dark:bg-white bg-black" />
+      <div className="dot dark:bg-white bg-black">
+        {isMusicElement && (
+          <lottie-player
+            autoplay
+            loop
+            id="musicCursorLottie"
+            mode="normal"
+            src="/musicCursorLottie.json"
+            style={{
+              width: '130px',
+              height: 'auto',
+              position: 'absolute',
+              bottom: '0px',
+              right: '-50px',
+            }}
+          ></lottie-player>
+        )}
+      </div>
     </div>
   );
 };

@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = ({
           <MeLast className="pointer-events-none md:hidden sm:w-auto xs:w-[13rem] w-[11rem] flex mx-6" />
         </div>
         <motion.div
-          className={`flex flex-col items-center transition-opacity ease-linear duration-[2000ms] delay-1000 ${
+          className={`flex flex-col items-center transition-opacity ease-linear duration-[2000ms] delay-1000 font-light ${
             showSub ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
           style={{
@@ -109,7 +109,7 @@ const Hero: React.FC<HeroProps> = ({
               ? 'Full Stack Developer'
               : 'Food Enthusiast'}
           </p>
-          <div className="sm:mt-5 mt-4 sm:text-2xl text-3xl flex flex-row justify-center md:gap-4 gap-6 dark:text-gray-400 text-gray-500">
+          <div className="sm:mt-5 mt-6 sm:text-3xl text-4xl flex flex-row justify-center md:gap-4 gap-6 dark:text-gray-400 text-gray-500">
             <a
               className="dark:hover:text-white hover:text-black pointer-cursor-element"
               aria-label="GitHub"
