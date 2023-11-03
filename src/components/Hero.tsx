@@ -17,12 +17,14 @@ import useStore from '../store';
 type HeroProps = {
   subTitleScaleTransform?: MotionValue<number>;
   subTitleMarginTopTransform?: MotionValue<string>;
+  scrollOpacityTransform?: MotionValue<number>;
   isOnDesktop?: boolean;
 };
 
 const Hero: React.FC<HeroProps> = ({
   subTitleScaleTransform,
   subTitleMarginTopTransform,
+  scrollOpacityTransform,
   isOnDesktop = false,
 }) => {
   useEffect(() => {
@@ -156,6 +158,14 @@ const Hero: React.FC<HeroProps> = ({
             </a>
           </div>
         </motion.div>
+        <motion.p
+          style={{ opacity: scrollOpacityTransform }}
+          className={`${
+            showSub ? 'block' : 'hidden'
+          } absolute dark:text-gray-600 text-gray-300 bottom-0 xl:-mb-72 lg:-mb-52 mb-16`}
+        >
+          Scroll
+        </motion.p>
       </div>
     </>
   );

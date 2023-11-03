@@ -28,6 +28,11 @@ export default function Landing() {
     [0.0, 0.25],
     ['50%', '13%'],
   );
+  const scrollOpacityTransform = useTransform(
+    scrollYProgress,
+    [0.0, 0.02],
+    [1, 0],
+  );
 
   useEffect(() => {
     create({
@@ -60,6 +65,7 @@ export default function Landing() {
         <Hero
           subTitleScaleTransform={subTitleScaleTransform}
           subTitleMarginTopTransform={subTitleMarginTopTransform}
+          scrollOpacityTransform={scrollOpacityTransform}
           isOnDesktop={true}
         />
       </motion.div>
@@ -70,7 +76,7 @@ export default function Landing() {
       </div>
       <main className="grid grid-cols-3">
         <div className="col-span-1"></div>
-        <div className="lg:col-span-2 min-h-screen col-span-3 flex flex-col gap-3 lg:pr-10 lg:pl-0 pl-20 pr-20">
+        <div className="lg:col-span-2 min-h-screen col-span-3 flex flex-col gap-3 lg:px-0 lg:pr-10 lg:pl-0 md:px-20 sm:px-16 px-10">
           <h1 className="text-4xl font-thin mb-6">
             I build <span className="special-cursor-element">performant</span>{' '}
             and <span className="special-cursor-element">scalable</span> full
