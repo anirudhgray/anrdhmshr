@@ -29,8 +29,6 @@
 }
 
 .special-cursor {
-  /* ring larger in size, purple hue */
-  background-color: #ffffff36;
   width: 130px;
   height: 130px;
 }

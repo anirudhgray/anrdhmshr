@@ -52,7 +52,11 @@ const CustomCursor: React.FC = () => {
     <div
       className={`cursor dark:border-white border-black ${
         isPointer ? 'pointer' : ''
-      } ${`${isSpecialElement ? 'special-cursor' : ''}`}`}
+      } ${`${
+        isSpecialElement
+          ? 'special-cursor dark:bg-[#ffffff36] bg-[#0000000e]'
+          : ''
+      }`}`}
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div className="dot dark:bg-white bg-black" />

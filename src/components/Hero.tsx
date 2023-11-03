@@ -76,6 +76,7 @@ const Hero: React.FC = () => {
               type="checkbox"
               checked={darkMode}
               onChange={toggleDarkMode}
+              tabIndex={0}
             />
             <span className="slider round pointer-cursor-element"></span>
           </label>
