@@ -1,6 +1,7 @@
 // CustomCursor.tsx
 import React, { useEffect, useState } from 'react';
 import './CustomCursor.css';
+import useStore from '../store';
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState<{
@@ -16,6 +17,8 @@ const CustomCursor: React.FC = () => {
 
   // Check if the device has a mouse
   const hasMouse = window.matchMedia('(pointer:fine)').matches;
+
+  const { inc } = useStore();
 
   useEffect(() => {
     if (hasMouse) {
@@ -44,9 +47,10 @@ const CustomCursor: React.FC = () => {
         if (
           (e.target as Element).classList.contains('special-cursor-element')
         ) {
-          setTimeout(() => setIsClicked(false), 300); // Reset isClicked after 500ms
+          setTimeout(() => setIsClicked(false), 200);
+          inc();
         } else {
-          setTimeout(() => setIsClicked(false), 200); // Reset isClicked after 500ms
+          setTimeout(() => setIsClicked(false), 200);
         }
       };
       document.addEventListener('click', handleClick);

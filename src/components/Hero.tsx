@@ -11,6 +11,7 @@ import {
 } from 'react-icons/ai';
 import './Hero.css';
 import { MotionValue, motion } from 'framer-motion';
+import useStore from '../store';
 
 // motion transform prop type
 type HeroProps = {
@@ -68,6 +69,7 @@ const Hero: React.FC<HeroProps> = ({
   }, []);
 
   const [showSub, setShowSub] = useState(false);
+  const { specialClickCount, incTagLineNumber, tagLineNumber } = useStore();
   return (
     <>
       <span
@@ -95,7 +97,18 @@ const Hero: React.FC<HeroProps> = ({
             marginTop: subTitleMarginTopTransform,
           }}
         >
-          <p className="dark:text-gray-400 text-gray-500">Software Developer</p>
+          <p
+            onClick={incTagLineNumber}
+            className="dark:text-gray-400 text-gray-500 pointer-cursor-element"
+          >
+            {specialClickCount > 10
+              ? "It's a lot of fun clicking, eh?"
+              : tagLineNumber === 0
+              ? 'Software Engineer'
+              : tagLineNumber === 1
+              ? 'Full Stack Developer'
+              : 'Food Enthusiast'}
+          </p>
           <div className="sm:mt-5 mt-4 sm:text-2xl text-3xl flex flex-row justify-center md:gap-4 gap-6 dark:text-gray-400 text-gray-500">
             <a
               className="dark:hover:text-white hover:text-black pointer-cursor-element"
