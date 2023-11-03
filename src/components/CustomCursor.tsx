@@ -11,6 +11,7 @@ const CustomCursor: React.FC = () => {
     y: null,
   });
   const [isPointer, setIsPointer] = useState(false);
+  const [isSpecialElement, setIsSpecialElement] = useState(false);
 
   // Check if the device has a mouse
   const hasMouse = window.matchMedia('(pointer:fine)').matches;
@@ -19,13 +20,16 @@ const CustomCursor: React.FC = () => {
     if (hasMouse) {
       const updatePosition = (e: MouseEvent) => {
         setPosition({ x: e.clientX, y: e.clientY });
-        console.log(getComputedStyle(e.target as Element).cursor);
       };
       document.addEventListener('pointermove', updatePosition);
 
       const checkIfPointer = (e: MouseEvent) => {
         setIsPointer(
-          getComputedStyle(e.target as Element).cursor === 'pointer',
+          //   getComputedStyle(e.target as Element).cursor === 'pointer',
+          (e.target as Element).classList.contains('pointer-cursor-element'),
+        );
+        setIsSpecialElement(
+          (e.target as Element).classList.contains('special-cursor-element'),
         );
       };
       document.addEventListener('mouseover', checkIfPointer);
@@ -48,7 +52,7 @@ const CustomCursor: React.FC = () => {
     <div
       className={`cursor dark:border-white border-black ${
         isPointer ? 'pointer' : ''
-      }`}
+      } ${`${isSpecialElement ? 'special-cursor' : ''}`}`}
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div className="dot dark:bg-white bg-black" />
