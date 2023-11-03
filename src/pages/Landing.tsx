@@ -1,11 +1,36 @@
+import { useEffect, useRef } from 'react';
 import Hero from '../components/Hero';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 
 export default function Landing() {
+  const mainRef = useRef(null);
+  // const { scrollYProgress } = useScroll();
+  // const scaleTransform = useTransform(scrollYProgress, [0, 0.08], [1, 0.5]);
+  // const leftTransform = useTransform(scrollYProgress, [0, 0.08], ['37%', '3%']);
+  // const topTransform = useTransform(scrollYProgress, [0, 0.08], ['35%', '13%']);
+
   return (
-    <div className="dark:bg-[#141414] dark:text-white bg-slate-100">
-      <div>
+    <div
+      ref={mainRef}
+      className="dark:bg-[#141414] dark:text-white bg-slate-100"
+    >
+      <motion.div
+        style={
+          {
+            // scale: scaleTransform,
+            // left: leftTransform,
+            // top: topTransform,
+          }
+        }
+        id="hello"
+      >
         <Hero />
-      </div>
+      </motion.div>
       <main className="grid grid-cols-3">
         <div className="col-span-1"></div>
         <div className="col-span-2 flex flex-col gap-3">
