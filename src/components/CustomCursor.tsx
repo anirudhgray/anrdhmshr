@@ -87,22 +87,42 @@ const CustomCursor: React.FC = () => {
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div className="dot dark:bg-white bg-black">
-        {isMusicElement && (
-          <lottie-player
-            autoplay
-            loop
-            id="musicCursorLottie"
-            mode="normal"
-            src="/musicCursorLottie.json"
-            style={{
-              width: '130px',
-              height: 'auto',
-              position: 'absolute',
-              bottom: '0px',
-              right: '-50px',
-            }}
-          ></lottie-player>
-        )}
+        <div className="dark:hidden">
+          {isMusicElement && (
+            <lottie-player
+              autoplay
+              loop
+              id="musicCursorLottie"
+              mode="normal"
+              src="/musicCursorLottie.json"
+              style={{
+                width: '130px',
+                height: 'auto',
+                position: 'absolute',
+                bottom: '0px',
+                right: '-50px',
+              }}
+            ></lottie-player>
+          )}
+        </div>
+        <div className="dark:block hidden">
+          {isMusicElement && (
+            <lottie-player
+              autoplay
+              loop
+              id="musicCursorLottie"
+              mode="normal"
+              src="/musicCursorLottieWhite.json"
+              style={{
+                width: '130px',
+                height: 'auto',
+                position: 'absolute',
+                bottom: '0px',
+                right: '-50px',
+              }}
+            ></lottie-player>
+          )}
+        </div>
       </div>
     </div>
   );
