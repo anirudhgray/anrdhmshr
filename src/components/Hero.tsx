@@ -24,8 +24,6 @@ const Hero: React.FC<HeroProps> = ({
   subTitleMarginTopTransform,
   isOnDesktop = false,
 }) => {
-  const [loop, setLoop] = useState(true);
-
   useEffect(() => {
     // desktop
     anime({
@@ -37,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({
         return i * 250;
       },
       direction: 'alternate',
-      loop: loop,
+      loop: true,
     });
     // smaller desktop, without scale animation for hero
     anime({
@@ -49,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({
         return i * 250;
       },
       direction: 'alternate',
-      loop: loop,
+      loop: true,
     });
     // mobile
     anime({

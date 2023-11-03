@@ -12,6 +12,7 @@ const CustomCursor: React.FC = () => {
   });
   const [isPointer, setIsPointer] = useState(false);
   const [isSpecialElement, setIsSpecialElement] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   // Check if the device has a mouse
   const hasMouse = window.matchMedia('(pointer:fine)').matches;
@@ -23,7 +24,6 @@ const CustomCursor: React.FC = () => {
           x: (e as MouseEvent).clientX,
           y: (e as MouseEvent).clientY,
         });
-        console.log('update');
       };
       document.addEventListener('pointermove', updatePosition);
 
@@ -39,13 +39,23 @@ const CustomCursor: React.FC = () => {
       document.addEventListener('mouseover', checkIfPointer);
       document.addEventListener('mouseout', checkIfPointer);
 
+      const handleClick = (e: MouseEvent) => {
+        setIsClicked(true);
+        if (
+          (e.target as Element).classList.contains('special-cursor-element')
+        ) {
+          setTimeout(() => setIsClicked(false), 300); // Reset isClicked after 500ms
+        } else {
+          setTimeout(() => setIsClicked(false), 200); // Reset isClicked after 500ms
+        }
+      };
+      document.addEventListener('click', handleClick);
+
       return () => {
         document.removeEventListener('pointermove', updatePosition);
-        document.removeEventListener('scroll', updatePosition);
         document.removeEventListener('mouseover', checkIfPointer);
         document.removeEventListener('mouseout', checkIfPointer);
-        window.removeEventListener('resize', updatePosition);
-        window.removeEventListener('scroll', updatePosition);
+        document.removeEventListener('click', handleClick);
       };
     }
   }, [hasMouse]);
@@ -59,11 +69,13 @@ const CustomCursor: React.FC = () => {
     <div
       className={`cursor dark:border-white border-black ${
         isPointer ? 'pointer' : ''
-      } ${`${
+      } ${
         isSpecialElement
-          ? 'special-cursor dark:bg-[#ffffff36] bg-[#0000000e]'
+          ? isClicked
+            ? 'special-cursor-clicked dark:bg-[#ffffff36] bg-[#0000000e]'
+            : 'special-cursor dark:bg-[#ffffff36] bg-[#0000000e]'
           : ''
-      }`}`}
+      } ${!isSpecialElement ? (isClicked ? 'cursor-clicked' : '') : ''}`}
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div className="dot dark:bg-white bg-black" />
