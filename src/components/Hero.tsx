@@ -13,6 +13,7 @@ import './Hero.css';
 
 const Hero: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [loop, setLoop] = useState(true);
 
   useEffect(() => {
     const storedDarkMode = localStorage.getItem('theme');
@@ -33,7 +34,7 @@ const Hero: React.FC = () => {
         return i * 250;
       },
       direction: 'alternate',
-      loop: true,
+      loop: loop,
     });
     // mobile
     anime({
@@ -69,7 +70,7 @@ const Hero: React.FC = () => {
         T
       </span>
       <div className="line-drawing-demo min-h-screen min-w-screen flex flex-col items-center justify-center md:gap-6 sm:gap-10 gap-8">
-        <div className="absolute top-0 right-0 m-4">
+        <div className="fixed top-0 right-0 m-4">
           {/* Dark mode toggle */}
           <label className="switch">
             <input

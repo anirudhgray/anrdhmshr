@@ -1,6 +1,6 @@
 /* CustomCursor.css */
 .cursor {
-  position: absolute;
+  position: fixed;
   width: 20px;
   height: 20px;
   border: 2px solid;
@@ -14,7 +14,7 @@
 }
 
 .dot {
-  position: absolute;
+  position: fixed;
   width: 3px;
   height: 3px;
   border-radius: 50%;

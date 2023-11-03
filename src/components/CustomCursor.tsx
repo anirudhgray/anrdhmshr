@@ -18,8 +18,12 @@ const CustomCursor: React.FC = () => {
 
   useEffect(() => {
     if (hasMouse) {
-      const updatePosition = (e: MouseEvent) => {
-        setPosition({ x: e.clientX, y: e.clientY });
+      const updatePosition = (e: MouseEvent | Event) => {
+        setPosition({
+          x: (e as MouseEvent).clientX,
+          y: (e as MouseEvent).clientY,
+        });
+        console.log('update');
       };
       document.addEventListener('pointermove', updatePosition);
 
@@ -37,8 +41,11 @@ const CustomCursor: React.FC = () => {
 
       return () => {
         document.removeEventListener('pointermove', updatePosition);
+        document.removeEventListener('scroll', updatePosition);
         document.removeEventListener('mouseover', checkIfPointer);
         document.removeEventListener('mouseout', checkIfPointer);
+        window.removeEventListener('resize', updatePosition);
+        window.removeEventListener('scroll', updatePosition);
       };
     }
   }, [hasMouse]);
