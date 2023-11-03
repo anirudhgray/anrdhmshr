@@ -10,8 +10,20 @@ import {
   AiFillFileText,
 } from 'react-icons/ai';
 import './Hero.css';
+import { MotionValue, motion } from 'framer-motion';
 
-const Hero: React.FC = () => {
+// motion transform prop type
+type HeroProps = {
+  subTitleScaleTransform?: MotionValue<number>;
+  subTitleMarginTopTransform?: MotionValue<string>;
+  isOnDesktop?: boolean;
+};
+
+const Hero: React.FC<HeroProps> = ({
+  subTitleScaleTransform,
+  subTitleMarginTopTransform,
+  isOnDesktop = false,
+}) => {
   const [loop, setLoop] = useState(true);
 
   useEffect(() => {
@@ -27,9 +39,21 @@ const Hero: React.FC = () => {
       direction: 'alternate',
       loop: loop,
     });
+    // smaller desktop, without scale animation for hero
+    anime({
+      targets: '.line-drawing-demo-mobile .lines path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 1500,
+      delay: function (_, i) {
+        return i * 250;
+      },
+      direction: 'alternate',
+      loop: loop,
+    });
     // mobile
     anime({
-      targets: '.line-drawing-demo .linesSep path',
+      targets: '.line-drawing-demo-mobile .linesSep path',
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
@@ -54,16 +78,24 @@ const Hero: React.FC = () => {
       >
         T
       </span>
-      <div className="line-drawing-demo min-h-screen min-w-screen flex flex-col items-center justify-center md:gap-6 sm:gap-10 gap-8">
+      <div
+        className={`${
+          isOnDesktop ? 'line-drawing-demo' : 'line-drawing-demo-mobile'
+        } flex flex-col items-center justify-center md:gap-6 sm:gap-10 gap-8 w-full`}
+      >
         <div className="special-cursor-element flex flex-col items-center justify-center md:gap-6 sm:gap-10 gap-8">
           <Me className="pointer-events-none md:block hidden px-6 mb-5" />
           <MeFirst className="pointer-events-none md:hidden sm:w-auto xs:w-[16rem] w-[13rem] flex mx-6" />
           <MeLast className="pointer-events-none md:hidden sm:w-auto xs:w-[13rem] w-[11rem] flex mx-6" />
         </div>
-        <div
+        <motion.div
           className={`flex flex-col items-center transition-opacity ease-linear duration-[2000ms] delay-1000 ${
             showSub ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
+          style={{
+            scale: subTitleScaleTransform,
+            marginTop: subTitleMarginTopTransform,
+          }}
         >
           <p className="dark:text-gray-400 text-gray-500">Software Developer</p>
           <div className="sm:mt-5 mt-4 sm:text-2xl text-3xl flex flex-row justify-center md:gap-4 gap-6 dark:text-gray-400 text-gray-500">
@@ -112,7 +144,7 @@ const Hero: React.FC = () => {
               </span>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

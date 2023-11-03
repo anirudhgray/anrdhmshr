@@ -1,18 +1,31 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Hero from '../components/Hero';
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Landing() {
   const mainRef = useRef(null);
-  // const { scrollYProgress } = useScroll();
-  // const scaleTransform = useTransform(scrollYProgress, [0, 0.08], [1, 0.5]);
-  // const leftTransform = useTransform(scrollYProgress, [0, 0.08], ['37%', '3%']);
-  // const topTransform = useTransform(scrollYProgress, [0, 0.08], ['35%', '13%']);
+  const { scrollYProgress } = useScroll();
+  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.25], [1, 0.5]);
+  const subTitleScaleTransform = useTransform(
+    scrollYProgress,
+    [0.0, 0.25],
+    [1, 1.7],
+  );
+  const subTitleMarginTopTransform = useTransform(
+    scrollYProgress,
+    [0.0, 0.25],
+    ['0px', '30px'],
+  );
+  const leftTransform = useTransform(
+    scrollYProgress,
+    [0.0, 0.25],
+    ['33%', '0%'],
+  );
+  const topTransform = useTransform(
+    scrollYProgress,
+    [0.0, 0.25],
+    ['50%', '10%'],
+  );
 
   return (
     <div
@@ -20,20 +33,28 @@ export default function Landing() {
       className="dark:bg-[#141414] dark:text-white bg-slate-100"
     >
       <motion.div
-        style={
-          {
-            // scale: scaleTransform,
-            // left: leftTransform,
-            // top: topTransform,
-          }
-        }
-        id="hello"
+        style={{
+          scale: scaleTransform,
+          left: leftTransform,
+          top: topTransform,
+          translateY: '-50%',
+        }}
+        className="fixed w-1/3 lg:block hidden"
       >
-        <Hero />
+        <Hero
+          subTitleScaleTransform={subTitleScaleTransform}
+          subTitleMarginTopTransform={subTitleMarginTopTransform}
+          isOnDesktop={true}
+        />
       </motion.div>
+      <div className="h-[100vh]">
+        <div className="lg:hidden h-screen flex my-auto">
+          <Hero />
+        </div>
+      </div>
       <main className="grid grid-cols-3">
         <div className="col-span-1"></div>
-        <div className="col-span-2 flex flex-col gap-3">
+        <div className="lg:col-span-2 col-span-3 flex flex-col gap-3 px-4">
           {/* lot of lorem ipsum */}
           {Array.from({ length: 20 }).map((_, index) => (
             <p key={index}>
