@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import '@lottiefiles/lottie-player';
 import { create } from '@lottiefiles/lottie-interactivity';
+import Skills from '../components/Skills';
 
 export default function Landing() {
   const mainRef = useRef(null);
@@ -97,22 +98,9 @@ export default function Landing() {
               metus eget nisl. Nulla facilisi.
             </p>
           ))}
-          <div className="my-16 flex gap-5 items-center px-8 music-cursor-element">
-            <lottie-player
-              autoplay
-              loop
-              id="musicLottie"
-              mode="normal"
-              src="/musicLottie.json"
-              style={{ width: '150px' }}
-            ></lottie-player>
-            <div className="flex flex-col gap-2">
-              <p className="dark:text-gray-400 font-light text-gray-500 music-cursor-element">
-                Listening right now...
-              </p>
-            </div>
-          </div>
-          <h1 className="text-4xl font-thin mb-6">
+          <p>Some stuff I work with.</p>
+          <Skills />
+          <h1 className="text-4xl font-thin mb-6 mt-10">
             My <span className="special-cursor-element">Experience.</span>
           </h1>
           {/* lot of lorem ipsum */}
@@ -167,7 +155,22 @@ export default function Landing() {
           >
             My GitHub
           </a>
-          <p className="my-12 dark:text-gray-400 font-extralight text-gray-500">
+          <div className="my-16 flex gap-5 items-center px-8 music-cursor-element">
+            <lottie-player
+              autoplay
+              loop
+              id="musicLottie"
+              mode="normal"
+              src="/musicLottie.json"
+              style={{ width: '150px' }}
+            ></lottie-player>
+            <div className="flex flex-col gap-2">
+              <p className="dark:text-gray-400 font-light text-gray-500 music-cursor-element">
+                Listening right now...
+              </p>
+            </div>
+          </div>
+          <p className="mb-12 mt-6 dark:text-gray-400 font-extralight text-gray-500">
             Built by me. Reach out to me or tell me what you think at{' '}
             <a
               target="_blank"
