@@ -1,0 +1,18 @@
+[
+    {
+        "start": "Mar 2022",
+        "end": "Present",
+        "organisation": "Google Developer Students Clubs, VIT Vellore",
+        "role": "Full Stack Developer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+        "techStack": ["Golang","React","Svelte","NodeJS","MongoDB","PostgreSQL"]
+    },
+    {
+        "start": "Mar 2022",
+        "end": "Present",
+        "organisation": "Google Developer Students Clubs, VIT Vellore",
+        "role": "Full Stack Developer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+        "techStack": ["Golang","React","Svelte","NodeJS","MongoDB","PostgreSQL"]
+    }
+]

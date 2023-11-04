@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import '@lottiefiles/lottie-player';
 import { create } from '@lottiefiles/lottie-interactivity';
 import Skills from '../components/Skills';
+import experience from '../content/experience.json';
+import ExperienceCard from '../components/ExperienceCard';
 
 export default function Landing() {
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -222,25 +224,15 @@ export default function Landing() {
             <h1 className="text-4xl font-thin mb-6 mt-10">
               My <span className="special-cursor-element">Experience.</span>
             </h1>
-            {/* lot of lorem ipsum */}
-            {Array.from({ length: 3 }).map((_, index) => (
-              <p className="font-light" key={index}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi.
-              </p>
-            ))}
+            <div className="flex flex-col gap-10">
+              {experience.map((exp) => (
+                <ExperienceCard {...exp} />
+              ))}
+            </div>
             <a
               target="_blank"
               href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
-              className="pointer-cursor-element hover:underline w-fit"
+              className="pointer-cursor-element hover:underline w-fit mt-8"
             >
               See full résumé
             </a>
