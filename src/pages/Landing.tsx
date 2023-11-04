@@ -10,22 +10,24 @@ export default function Landing() {
   const [parentWidth, setParentWidth] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
 
+  const [curTab, setCurTab] = useState('');
+
   const { scrollYProgress } = useScroll();
-  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.25], [1, 0.48]);
+  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.35], [1, 0.48]);
   const subTitleScaleTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.25],
+    [0.0, 0.35],
     [1, 1.7],
   );
   const subTitleMarginTopTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.25],
+    [0.0, 0.35],
     ['0px', '30px'],
   );
 
   const leftTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.25],
+    [0.0, 0.35],
     [
       parentWidth / 3 + (windowWidth - parentWidth) / 2,
       (windowWidth - parentWidth) / 2,
@@ -33,13 +35,19 @@ export default function Landing() {
   );
   const topTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.25],
+    [0.0, 0.35],
     ['50%', '13%'],
   );
   const scrollOpacityTransform = useTransform(
     scrollYProgress,
     [0.0, 0.02],
     [1, 0],
+  );
+
+  const navlinksOpacityTransform = useTransform(
+    scrollYProgress,
+    [0.2, 0.45],
+    [0, 1],
   );
 
   useEffect(() => {
@@ -58,7 +66,6 @@ export default function Landing() {
 
   useEffect(() => {
     const updateParentDimensions = () => {
-      console.log('ok');
       if (mainRef.current) {
         setParentWidth(mainRef.current.offsetWidth);
         setWindowWidth(window.innerWidth);
@@ -73,6 +80,41 @@ export default function Landing() {
     // Clean up event listener when component unmounts
     return () => {
       window.removeEventListener('resize', updateParentDimensions);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Define an observer function
+    const handleIntersection: IntersectionObserverCallback = (
+      entries: IntersectionObserverEntry[],
+    ) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Update curTab based on the section in view
+          setCurTab(entry.target.id);
+        }
+      });
+    };
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      // root: contentRef.current,
+      rootMargin: '0px',
+      threshold: 0.8, // Adjust the threshold as needed
+    });
+
+    // Observe the sections
+    const sections = ['about', 'experience', 'projects'];
+    sections.forEach((section) => {
+      const sectionElement = document.querySelector(`#${section}`);
+      if (sectionElement) {
+        observer.observe(sectionElement);
+      }
+    });
+
+    return () => {
+      // Clean up the observer when the component unmounts
+      observer.disconnect();
     };
   }, []);
 
@@ -101,85 +143,140 @@ export default function Landing() {
         </div>
       </div>
       <main className="grid grid-cols-3">
-        <div className="col-span-1"></div>
+        <div className="col-span-1 lg:block hidden">
+          <motion.div
+            style={{ opacity: navlinksOpacityTransform }}
+            className="sticky top-[26%] flex flex-col gap-2 dark:text-gray-400 font-light text-gray-500 lg:px-14 xl:px-20 lg:mt-44 xl:mt-32 items-center"
+          >
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('about');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className={`${
+                curTab === 'about' ? 'selected dark:text-white text-black' : ''
+              } navlinks dark:before:bg-white before:bg-black dark:hover:text-white hover:text-black pointer-cursor-element w-fit`}
+            >
+              About Me
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('experience');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className={`${
+                curTab === 'experience'
+                  ? 'selected dark:text-white text-black'
+                  : ''
+              } navlinks dark:before:bg-white before:bg-black dark:hover:text-white hover:text-black pointer-cursor-element w-fit`}
+            >
+              Experience
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('projects');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className={`${
+                curTab === 'projects'
+                  ? 'selected dark:text-white text-black'
+                  : ''
+              } navlinks dark:before:bg-white before:bg-black dark:hover:text-white hover:text-black pointer-cursor-element w-fit`}
+            >
+              Projects
+            </a>
+          </motion.div>
+        </div>
         <div className="lg:col-span-2 min-h-screen col-span-3 flex flex-col gap-3 lg:px-0 lg:pr-10 lg:pl-0 md:px-20 sm:px-16 px-10">
-          <h1 className="text-4xl font-thin mb-6">
-            I build <span className="special-cursor-element">performant</span>{' '}
-            and <span className="special-cursor-element">scalable</span> full
-            stack applications, and have experience leading dev teams.
-          </h1>
-          {/* lot of lorem ipsum */}
-          {Array.from({ length: 2 }).map((_, index) => (
-            <p className="font-light" key={index}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. Donec aliquam, nunc
-              vel tempor tincidunt, nisl velit tincidunt orci, vitae consequat
-              neque metus eget nisl. Nulla facilisi. Donec aliquam, nunc vel
-              tempor tincidunt, nisl velit tincidunt orci, vitae consequat neque
-              metus eget nisl. Nulla facilisi.
-            </p>
-          ))}
-          <p>Some stuff I work with.</p>
-          <Skills />
-          <h1 className="text-4xl font-thin mb-6 mt-10">
-            My <span className="special-cursor-element">Experience.</span>
-          </h1>
-          {/* lot of lorem ipsum */}
-          {Array.from({ length: 3 }).map((_, index) => (
-            <p className="font-light" key={index}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. Donec aliquam, nunc
-              vel tempor tincidunt, nisl velit tincidunt orci, vitae consequat
-              neque metus eget nisl. Nulla facilisi. Donec aliquam, nunc vel
-              tempor tincidunt, nisl velit tincidunt orci, vitae consequat neque
-              metus eget nisl. Nulla facilisi.
-            </p>
-          ))}
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
-            className="pointer-cursor-element hover:underline w-fit"
-          >
-            See full résumé
-          </a>
-          <h1 className="text-4xl font-thin mb-6 mt-10">
-            Selected <span className="special-cursor-element">Projects.</span>
-          </h1>
-          {Array.from({ length: 3 }).map((_, index) => (
-            <p className="font-light" key={index}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-              aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-              vitae consequat neque metus eget nisl. Nulla facilisi. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. Donec aliquam, nunc
-              vel tempor tincidunt, nisl velit tincidunt orci, vitae consequat
-              neque metus eget nisl. Nulla facilisi. Donec aliquam, nunc vel
-              tempor tincidunt, nisl velit tincidunt orci, vitae consequat neque
-              metus eget nisl. Nulla facilisi.
-            </p>
-          ))}
-          <a
-            target="_blank"
-            className="pointer-cursor-element hover:underline w-fit"
-          >
-            See all projects
-          </a>
-          <a
-            href="https://github.com/anirudhgray"
-            target="_blank"
-            className="pointer-cursor-element hover:underline w-fit"
-          >
-            My GitHub
-          </a>
+          <div id="about" className="flex flex-col gap-3">
+            <h1 className="text-4xl font-thin mb-6">
+              I build <span className="special-cursor-element">performant</span>{' '}
+              and <span className="special-cursor-element">scalable</span> full
+              stack applications, and have experience leading dev teams.
+            </h1>
+            {/* lot of lorem ipsum */}
+            {Array.from({ length: 2 }).map((_, index) => (
+              <p className="font-light" key={index}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi.
+              </p>
+            ))}
+            <p>Some stuff I work with.</p>
+            <Skills />
+          </div>
+          <div id="experience" className="flex flex-col gap-3">
+            <h1 className="text-4xl font-thin mb-6 mt-10">
+              My <span className="special-cursor-element">Experience.</span>
+            </h1>
+            {/* lot of lorem ipsum */}
+            {Array.from({ length: 3 }).map((_, index) => (
+              <p className="font-light" key={index}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi.
+              </p>
+            ))}
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
+              className="pointer-cursor-element hover:underline w-fit"
+            >
+              See full résumé
+            </a>
+          </div>
+          <div id="projects" className="flex flex-col gap-3">
+            <h1 className="text-4xl font-thin mb-6 mt-10">
+              Selected <span className="special-cursor-element">Projects.</span>
+            </h1>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <p className="font-light" key={index}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
+                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
+                vitae consequat neque metus eget nisl. Nulla facilisi.
+              </p>
+            ))}
+            <a
+              target="_blank"
+              className="pointer-cursor-element hover:underline w-fit"
+            >
+              See all projects
+            </a>
+            <a
+              href="https://github.com/anirudhgray"
+              target="_blank"
+              className="pointer-cursor-element hover:underline w-fit"
+            >
+              My GitHub
+            </a>
+          </div>
           <div className="my-16 flex gap-5 items-center px-8 music-cursor-element">
             <lottie-player
               autoplay
