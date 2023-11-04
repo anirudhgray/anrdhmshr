@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App dark:bg-[#141414] dark:text-white bg-slate-100">
       <CustomCursor />
       <div className="fixed top-0 right-0 m-4">
         {/* Dark mode toggle */}

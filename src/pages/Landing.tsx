@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Hero from '../components/Hero';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import '@lottiefiles/lottie-player';
@@ -6,7 +6,10 @@ import { create } from '@lottiefiles/lottie-interactivity';
 import Skills from '../components/Skills';
 
 export default function Landing() {
-  const mainRef = useRef(null);
+  const mainRef = useRef<HTMLDivElement | null>(null);
+  const [parentWidth, setParentWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+
   const { scrollYProgress } = useScroll();
   const scaleTransform = useTransform(scrollYProgress, [0.0, 0.25], [1, 0.48]);
   const subTitleScaleTransform = useTransform(
@@ -19,10 +22,14 @@ export default function Landing() {
     [0.0, 0.25],
     ['0px', '30px'],
   );
+
   const leftTransform = useTransform(
     scrollYProgress,
     [0.0, 0.25],
-    ['33%', '0%'],
+    [
+      parentWidth / 3 + (windowWidth - parentWidth) / 2,
+      (windowWidth - parentWidth) / 2,
+    ], // Calculate based on parent width
   );
   const topTransform = useTransform(
     scrollYProgress,
@@ -47,21 +54,39 @@ export default function Landing() {
         },
       ],
     });
-  });
+  }, []);
+
+  useEffect(() => {
+    const updateParentDimensions = () => {
+      console.log('ok');
+      if (mainRef.current) {
+        setParentWidth(mainRef.current.offsetWidth);
+        setWindowWidth(window.innerWidth);
+      }
+    };
+
+    updateParentDimensions();
+
+    // Update dimensions whenever the window is resized
+    window.addEventListener('resize', updateParentDimensions);
+
+    // Clean up event listener when component unmounts
+    return () => {
+      window.removeEventListener('resize', updateParentDimensions);
+    };
+  }, []);
 
   return (
-    <div
-      ref={mainRef}
-      className="dark:bg-[#141414] dark:text-white bg-slate-100"
-    >
+    <div ref={mainRef} className="relative w-full max-w-[1320px] mx-auto">
       <motion.div
         style={{
           scale: scaleTransform,
           left: leftTransform,
           top: topTransform,
           translateY: '-50%',
+          width: parentWidth / 3,
         }}
-        className="fixed w-1/3 lg:block hidden"
+        className="fixed lg:block hidden"
       >
         <Hero
           subTitleScaleTransform={subTitleScaleTransform}
