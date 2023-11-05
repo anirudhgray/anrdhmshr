@@ -162,7 +162,7 @@ const Hero: React.FC<HeroProps> = ({
           style={{ opacity: scrollOpacityTransform }}
           className={`${
             showSub ? 'block' : 'hidden'
-          } absolute dark:text-gray-600 text-gray-300 bottom-0 xl:-mb-72 lg:-mb-52 mb-16`}
+          } lg:block hidden absolute dark:text-gray-600 text-gray-300 bottom-0 xl:-mb-72 lg:-mb-52`}
         >
           Scroll
         </motion.p>

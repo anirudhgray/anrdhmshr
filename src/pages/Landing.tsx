@@ -15,21 +15,21 @@ export default function Landing() {
   const [curTab, setCurTab] = useState('');
 
   const { scrollYProgress } = useScroll();
-  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.35], [1, 0.48]);
+  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.275], [1, 0.48]);
   const subTitleScaleTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.35],
+    [0.0, 0.275],
     [1, 1.7],
   );
   const subTitleMarginTopTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.35],
+    [0.0, 0.275],
     ['0px', '30px'],
   );
 
   const leftTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.35],
+    [0.0, 0.275],
     [
       parentWidth / 3 + (windowWidth - parentWidth) / 2,
       (windowWidth - parentWidth) / 2,
@@ -37,7 +37,7 @@ export default function Landing() {
   );
   const topTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.35],
+    [0.0, 0.275],
     ['50%', '13%'],
   );
   const scrollOpacityTransform = useTransform(
@@ -148,7 +148,7 @@ export default function Landing() {
         <div className="col-span-1 lg:block hidden">
           <motion.div
             style={{ opacity: navlinksOpacityTransform }}
-            className="sticky top-[26%] flex flex-col gap-2 dark:text-gray-400 font-light text-gray-500 lg:px-14 xl:px-20 lg:mt-44 xl:mt-32 items-center"
+            className="sticky top-[26%] flex flex-col gap-2 dark:text-gray-400 font-light text-gray-500 lg:px-14 xl:px-20 lg:mt-32 xl:mt-20 items-center text-lg"
           >
             <a
               href="#"
@@ -195,7 +195,7 @@ export default function Landing() {
             </a>
           </motion.div>
         </div>
-        <div className="lg:col-span-2 min-h-screen col-span-3 flex flex-col gap-3 lg:px-0 lg:pr-10 lg:pl-0 md:px-20 sm:px-16 px-10">
+        <div className="lg:col-span-2 min-h-screen col-span-3 flex flex-col gap-20 lg:px-0 lg:pr-10 lg:pl-0 md:px-20 sm:px-16 px-10">
           <div id="about" className="flex flex-col gap-3">
             <h1 className="text-4xl font-thin mb-6">
               I build <span className="special-cursor-element">performant</span>{' '}
@@ -221,7 +221,7 @@ export default function Landing() {
             <Skills />
           </div>
           <div id="experience" className="flex flex-col gap-3 group/items">
-            <h1 className="text-4xl font-thin mb-6 mt-10">
+            <h1 className="text-4xl font-thin mb-6">
               My <span className="special-cursor-element">Experience.</span>
             </h1>
             <div className="flex flex-col gap-16">
@@ -229,7 +229,7 @@ export default function Landing() {
                 <ExperienceCard {...exp} />
               ))}
             </div>
-            <p className="text-2xl font-extralight mt-6 mb-4 group-hover/items:opacity-40">
+            <p className="text-2xl font-extralight mt-6 mb-4 group-hover/items:opacity-40 transition">
               Volunteering.
             </p>
             <div className="flex flex-col gap-16">
@@ -246,7 +246,7 @@ export default function Landing() {
             </a>
           </div>
           <div id="projects" className="flex flex-col gap-3">
-            <h1 className="text-4xl font-thin mb-6 mt-10">
+            <h1 className="text-4xl font-thin mb-6">
               Selected <span className="special-cursor-element">Projects.</span>
             </h1>
             {Array.from({ length: 3 }).map((_, index) => (
