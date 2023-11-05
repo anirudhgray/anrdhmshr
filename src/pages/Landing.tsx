@@ -220,12 +220,20 @@ export default function Landing() {
             <p>Some stuff I work with.</p>
             <Skills />
           </div>
-          <div id="experience" className="flex flex-col gap-3">
+          <div id="experience" className="flex flex-col gap-3 group/items">
             <h1 className="text-4xl font-thin mb-6 mt-10">
               My <span className="special-cursor-element">Experience.</span>
             </h1>
-            <div className="flex flex-col gap-10">
-              {experience.map((exp) => (
+            <div className="flex flex-col gap-16">
+              {experience.experience.map((exp) => (
+                <ExperienceCard {...exp} />
+              ))}
+            </div>
+            <p className="text-2xl font-extralight mt-6 mb-4 group-hover/items:opacity-40">
+              Volunteering.
+            </p>
+            <div className="flex flex-col gap-16">
+              {experience.volunteering.map((exp) => (
                 <ExperienceCard {...exp} />
               ))}
             </div>

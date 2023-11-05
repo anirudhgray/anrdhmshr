@@ -1,18 +1,67 @@
-[
-    {
-        "start": "Mar 2022",
-        "end": "Present",
-        "organisation": "Google Developer Students Clubs, VIT Vellore",
-        "role": "Full Stack Developer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
-        "techStack": ["Golang","React","Svelte","NodeJS","MongoDB","PostgreSQL"]
-    },
-    {
-        "start": "Mar 2022",
-        "end": "Present",
-        "organisation": "Google Developer Students Clubs, VIT Vellore",
-        "role": "Full Stack Developer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
-        "techStack": ["Golang","React","Svelte","NodeJS","MongoDB","PostgreSQL"]
-    }
-]
+{
+    "volunteering": [
+        {
+            "start": "Mar 2022",
+            "end": "Present",
+            "organisation": "Google Developer Students Clubs, VIT Vellore",
+            "role": "Full Stack Developer",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "techStack": [
+                "Golang",
+                "React",
+                "Svelte",
+                "NodeJS",
+                "MongoDB",
+                "PostgreSQL"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "start": "Nov 2023",
+            "end": "Present",
+            "organisation": "BalkanID",
+            "role": "Engineering Intern",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "techStack": [
+                "Golang",
+                "React"
+            ]
+        },
+        {
+            "start": "Aug 2023",
+            "end": "Sept 2023",
+            "organisation": "NITI Aayog",
+            "role": "Research Intern",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "techStack": [
+                "FOSS",
+                "Tech Policy"
+            ]
+        },
+        {
+            "start": "May 2023",
+            "end": "July 2023",
+            "organisation": "Credanic",
+            "role": "Software Development Intern",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "techStack": [
+                "React",
+                "React Native",
+                "Shopify"
+            ]
+        },
+        {
+            "start": "Sept 2022",
+            "end": "Dec 2022",
+            "organisation": "reunion",
+            "role": "Frontend Development Intern",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "techStack": [
+                "React",
+                "Storybook.js",
+                "Strapi"
+            ]
+        }
+    ]
+}
