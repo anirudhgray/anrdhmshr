@@ -3,6 +3,7 @@ import './App.css';
 import CustomCursor from './components/CustomCursor';
 import Landing from './pages/Landing';
 import { useEffect, useState } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 // Import your other components here
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="App dark:bg-[#141414] dark:text-white bg-slate-100">
       <CustomCursor />
+      <ScrollToTop />
       <div className="fixed top-0 right-0 m-4 z-10">
         {/* Dark mode toggle */}
         <label className="switch">

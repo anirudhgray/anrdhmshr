@@ -56,6 +56,12 @@ export default function Landing() {
     [0, 1],
   );
 
+  const progressWidthTransform = useTransform(
+    scrollYProgress,
+    [0.0, 1.0],
+    ['0%', '100%'],
+  );
+
   useEffect(() => {
     create({
       player: '#musicLottie',
@@ -126,6 +132,16 @@ export default function Landing() {
 
   return (
     <div ref={mainRef} className="relative w-full max-w-[1320px] mx-auto">
+      {/* progress bar fixed at bottom */}
+      <div
+        // style={{ opacity: scrollOpacityTransform }}
+        className="fixed bottom-0 left-0 w-full h-3 bg-gray-400 dark:bg-gray-700 z-20"
+      >
+        <motion.div
+          style={{ width: progressWidthTransform }}
+          className="h-full dark:bg-[#141414] bg-slate-100"
+        ></motion.div>
+      </div>
       <motion.div
         style={{
           scale: scaleTransform,
@@ -155,11 +171,12 @@ export default function Landing() {
             className="sticky top-[26%] flex flex-col gap-2 dark:text-gray-400 font-light text-gray-500 lg:px-14 xl:px-20 lg:mt-32 xl:mt-20 items-center text-lg"
           >
             <a
-              href="#"
+              href="#about"
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('about');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '#about');
               }}
               className={`${
                 curTab === 'about' ? 'selected dark:text-white text-black' : ''
@@ -168,11 +185,12 @@ export default function Landing() {
               About Me
             </a>
             <a
-              href="#"
+              href="#experience"
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('experience');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '#experience');
               }}
               className={`${
                 curTab === 'experience'
@@ -183,11 +201,12 @@ export default function Landing() {
               Experience
             </a>
             <a
-              href="#"
+              href="#projects"
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('projects');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '#projects');
               }}
               className={`${
                 curTab === 'projects'
@@ -280,7 +299,7 @@ export default function Landing() {
               ))}
             </div>
           </div>
-          <div className="my-16 flex gap-5 items-center px-8 music-cursor-element">
+          <div className="my-16 hidden gap-5 items-center px-8 music-cursor-element">
             <lottie-player
               autoplay
               loop
