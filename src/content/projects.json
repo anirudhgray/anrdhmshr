@@ -2,7 +2,7 @@
     {
         "name": "GDSC Ideas Portal",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
-        "link": "ideas.dscvit.com",
+        "link": "https://ideas.dscvit.com/",
         "image": "/ideas.png",
         "skills": [
             "React",
@@ -37,7 +37,7 @@
     {
         "name": "Career Node",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
-        "link": "#",
+        "link": "https://github.com/anirudhgray/funtimeError",
         "image": "/careernode.png",
         "skills": [
             "React",
@@ -47,7 +47,7 @@
     {
         "name": "Delhi Aa",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
-        "link": "#",
+        "link": "https://github.com/anirudhgray/hackstory",
         "image": "/delhi.png",
         "skills": [
             "Express",

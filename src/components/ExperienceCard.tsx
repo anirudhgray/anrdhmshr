@@ -5,6 +5,7 @@ type ExperienceCardProps = {
   role: string;
   description: string;
   techStack: string[];
+  link?: string;
 };
 
 export default function ExperienceCard({
@@ -14,6 +15,7 @@ export default function ExperienceCard({
   role,
   description,
   techStack,
+  link,
 }: ExperienceCardProps) {
   return (
     <div className="relative grid grid-cols-4 sm:group-hover/items:opacity-40 hover:!opacity-100 group transition">
@@ -29,9 +31,9 @@ export default function ExperienceCard({
             <div className="flex flex-row ">
               <a
                 target="_blank"
-                href="#"
+                href={link}
                 aria-label={organisation}
-                className="text-lg group/link  group-hover:underline transition"
+                className="text-lg group/link  group-hover:underline"
               >
                 {organisation}
                 <div className="absolute pointer-cursor-element rounded-md transition -inset-4 z-0 "></div>

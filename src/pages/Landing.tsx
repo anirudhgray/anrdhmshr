@@ -6,8 +6,10 @@ import { create } from '@lottiefiles/lottie-interactivity';
 import Skills from '../components/Skills';
 import experience from '../content/experience.json';
 import projects from '../content/projects.json';
+import misc from '../content/misc.json';
 import ExperienceCard from '../components/ExperienceCard';
 import ProjectShowcaseCard from '../components/ProjectShowcaseCard';
+import MiscCard from '../components/MiscCard';
 
 export default function Landing() {
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -258,6 +260,7 @@ export default function Landing() {
             </div>
             <a
               target="_blank"
+              href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
               className="pointer-cursor-element hover:underline w-fit mt-8"
             >
               See all projects
@@ -269,6 +272,13 @@ export default function Landing() {
             >
               My GitHub
             </a>
+          </div>
+          <div id="misc" className="flex flex-col gap-3">
+            <div className="flex flex-col gap-16">
+              {misc.map((m) => (
+                <MiscCard {...m} />
+              ))}
+            </div>
           </div>
           <div className="my-16 flex gap-5 items-center px-8 music-cursor-element">
             <lottie-player

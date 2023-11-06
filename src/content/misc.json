@@ -1,0 +1,13 @@
+[
+    {
+        "category": "Session",
+        "description": "Held a YT Live session on getting started with socket programming for the web, by building a simple client-server chat application.",
+        "link": "https://www.youtube.com/watch?v=GDuxF5ICLAM",
+        "YT": true
+    },
+    {
+        "category": "Hackathons",
+        "description": "Participated in and won at various hackathons such as Yantra The VIT Hack 2023 (Education Track), Devspace '22 (Sponsored Track) and Inspiron Hack '22 (Winner).",
+        "link": "https://www.linkedin.com/in/anirudh-mishra/details/honors/"
+    }
+]

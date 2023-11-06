@@ -29,7 +29,7 @@ export default function ProjectShowcaseCard({
                 target="_blank"
                 href={link}
                 aria-label={name}
-                className="text-lg group/link  group-hover:underline transition"
+                className="text-lg group/link  group-hover:underline"
               >
                 {name}
                 <div className="absolute pointer-cursor-element rounded-md transition -inset-4 z-0 "></div>

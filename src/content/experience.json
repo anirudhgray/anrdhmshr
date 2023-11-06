@@ -13,7 +13,8 @@
                 "NodeJS",
                 "MongoDB",
                 "PostgreSQL"
-            ]
+            ],
+            "link": "https://dscvit.com/"
         }
     ],
     "experience": [
@@ -26,7 +27,8 @@
             "techStack": [
                 "Golang",
                 "React"
-            ]
+            ],
+            "link": "https://www.balkan.id/"
         },
         {
             "start": "Aug 2023",
@@ -37,7 +39,8 @@
             "techStack": [
                 "FOSS",
                 "Tech Policy"
-            ]
+            ],
+            "link": "https://niti.gov.in/"
         },
         {
             "start": "May 2023",
