@@ -1,0 +1,125 @@
+[
+    {
+        "name": "GDSC Ideas Portal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "ideas.dscvit.com",
+        "image": "/ideas.png",
+        "skills": [
+            "React",
+            "Redux"
+        ]
+    },
+    {
+        "name": "Riviera'23 and Gravitas'23 Websites",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "https://en.wikipedia.org/wiki/Riviera_(festival)",
+        "image": "/gravitas.png",
+        "skills": [
+            "Next.js",
+            "Redux",
+            "Payment Gateway Integration",
+            "Framer Motion",
+            "Project Management"
+        ]
+    },
+    {
+        "name": "Nock",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/nock.png",
+        "skills": [
+            "Golang",
+            "MySQL (PlanetScale)",
+            "Docker",
+            "RabbitMQ"
+        ]
+    },
+    {
+        "name": "Career Node",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/careernode.png",
+        "skills": [
+            "React",
+            "React Flow"
+        ]
+    },
+    {
+        "name": "Delhi Aa",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/delhi.png",
+        "skills": [
+            "Express",
+            "MongoDB",
+            "React Native"
+        ]
+    },
+    {
+        "name": "Unnamed Meet App",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/careernode.png",
+        "skills": [
+            "React",
+            "socket.io",
+            "Agora",
+            "Redux",
+            "phaser.js"
+        ]
+    },
+    {
+        "name": "Go Bookstore",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/careernode.png",
+        "skills": [
+            "Golang",
+            "PostgreSQL",
+            "WASM",
+            "Recommendation System",
+            "Docker"
+        ]
+    },
+    {
+        "name": "Asynchronous Request Approval Portal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "#",
+        "image": "/careernode.png",
+        "skills": [
+            "Express",
+            "MongoDB",
+            "React",
+            "Server Side Events"
+        ]
+    },
+    {
+        "name": "Hexathon '23",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "hexathon.dscvit.com",
+        "image": "/hexathon.png",
+        "skills": [
+            "Next.js"
+        ]
+    },
+    {
+        "name": "Code2Doc",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "code2doc.dscvit.com",
+        "image": "/code2doc.png",
+        "skills": [
+            "Svelte"
+        ]
+    },
+    {
+        "name": "spaceQuery",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "link": "https://spacequery.anrdhmshr.tech/",
+        "image": "/careernode.png",
+        "skills": [
+            "Django",
+            "Vue",
+            "PostgreSQL"
+        ]
+    }
+]

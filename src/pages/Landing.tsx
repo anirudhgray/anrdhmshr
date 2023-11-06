@@ -5,7 +5,9 @@ import '@lottiefiles/lottie-player';
 import { create } from '@lottiefiles/lottie-interactivity';
 import Skills from '../components/Skills';
 import experience from '../content/experience.json';
+import projects from '../content/projects.json';
 import ExperienceCard from '../components/ExperienceCard';
+import ProjectShowcaseCard from '../components/ProjectShowcaseCard';
 
 export default function Landing() {
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -15,21 +17,21 @@ export default function Landing() {
   const [curTab, setCurTab] = useState('');
 
   const { scrollYProgress } = useScroll();
-  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.275], [1, 0.48]);
+  const scaleTransform = useTransform(scrollYProgress, [0.0, 0.225], [1, 0.48]);
   const subTitleScaleTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.275],
+    [0.0, 0.225],
     [1, 1.7],
   );
   const subTitleMarginTopTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.275],
+    [0.0, 0.225],
     ['0px', '30px'],
   );
 
   const leftTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.275],
+    [0.0, 0.225],
     [
       parentWidth / 3 + (windowWidth - parentWidth) / 2,
       (windowWidth - parentWidth) / 2,
@@ -37,7 +39,7 @@ export default function Landing() {
   );
   const topTransform = useTransform(
     scrollYProgress,
-    [0.0, 0.275],
+    [0.0, 0.225],
     ['50%', '13%'],
   );
   const scrollOpacityTransform = useTransform(
@@ -48,7 +50,7 @@ export default function Landing() {
 
   const navlinksOpacityTransform = useTransform(
     scrollYProgress,
-    [0.2, 0.45],
+    [0.15, 0.25],
     [0, 1],
   );
 
@@ -245,27 +247,18 @@ export default function Landing() {
               See full résumé
             </a>
           </div>
-          <div id="projects" className="flex flex-col gap-3">
+          <div id="projects" className="flex flex-col gap-3 group/items">
             <h1 className="text-4xl font-thin mb-6">
               Selected <span className="special-cursor-element">Projects.</span>
             </h1>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <p className="font-light" key={index}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi.
-              </p>
-            ))}
+            <div className="flex flex-col gap-16">
+              {projects.slice(0, 4).map((proj) => (
+                <ProjectShowcaseCard {...proj} />
+              ))}
+            </div>
             <a
               target="_blank"
-              className="pointer-cursor-element hover:underline w-fit"
+              className="pointer-cursor-element hover:underline w-fit mt-8"
             >
               See all projects
             </a>
