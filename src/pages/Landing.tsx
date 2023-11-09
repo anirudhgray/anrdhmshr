@@ -7,9 +7,11 @@ import Skills from '../components/Skills';
 import experience from '../content/experience.json';
 import projects from '../content/projects.json';
 import misc from '../content/misc.json';
+import about from '../content/about.json';
 import ExperienceCard from '../components/ExperienceCard';
 import ProjectShowcaseCard from '../components/ProjectShowcaseCard';
 import MiscCard from '../components/MiscCard';
+import ContentRenderer from '../components/ContentRenderer';
 
 export default function Landing() {
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -226,20 +228,7 @@ export default function Landing() {
               stack applications, and have experience leading dev teams.
             </h1>
             {/* lot of lorem ipsum */}
-            {Array.from({ length: 2 }).map((_, index) => (
-              <p className="font-light" key={index}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi. Donec
-                aliquam, nunc vel tempor tincidunt, nisl velit tincidunt orci,
-                vitae consequat neque metus eget nisl. Nulla facilisi.
-              </p>
-            ))}
+            <ContentRenderer content={about} />
             <p>Some stuff I work with.</p>
             <Skills />
           </div>
@@ -315,7 +304,15 @@ export default function Landing() {
             </div>
           </div>
           <p className="mb-12 mt-6 dark:text-gray-400 font-extralight text-gray-500">
-            Built by me. Reach out to me or tell me what you think at{' '}
+            Built by me and open-sourced at{' '}
+            <a
+              target="_blank"
+              href="https://github.com/anirudhgray/anrdhmshr"
+              className="pointer-cursor-element underline dark:hover:text-white hover:text-black"
+            >
+              anirudhgray/anrdhmshr
+            </a>
+            . Reach out to me or tell me what you think at{' '}
             <a
               target="_blank"
               href="mailto:anirudh04mishra@gmaill.com"

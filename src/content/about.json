@@ -1,0 +1,59 @@
+[
+    [
+        {
+            "type": "plaintext",
+            "content": "I'm a 19 year old student studying CS at "
+        },
+        {
+            "type": "link",
+            "content": "VIT",
+            "url": "https://vit.ac.in/"
+        },
+        {
+            "type": "plaintext",
+            "content": ". I love building cool software, and till date I've done so at "
+        },
+        {
+            "type": "link",
+            "content": "an active tech club",
+            "url": "https://dscvit.com/"
+        },
+        {
+            "type": "plaintext",
+            "content": ", "
+        },
+        {
+            "type": "link",
+            "content": "a governmental think tank",
+            "url": "https://niti.gov.in/"
+        },
+        {
+            "type": "plaintext",
+            "content": ", "
+        },
+        {
+            "type": "link",
+            "content": "a US-based security startup",
+            "url": "https://www.balkan.id/"
+        },
+        {
+            "type": "plaintext",
+            "content": " and (soon) "
+        },
+        {
+            "type": "link",
+            "content": "a major bank",
+            "url": "https://www.wellsfargo.com/"
+        },
+        {
+            "type": "plaintext",
+            "content": ". These days I'm usually working on Golang based projects."
+        }
+    ],
+    [
+        {
+            "type": "plaintext",
+            "content": "When I'm not at the computer, I can be found watching D&D streams, hanging out with my friends or reading a good book."
+        }
+    ]
+]
