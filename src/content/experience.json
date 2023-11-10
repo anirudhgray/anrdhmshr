@@ -5,7 +5,7 @@
             "end": "Present",
             "organisation": "Google Developer Students Clubs, VIT Vellore",
             "role": "Full Stack Developer",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "description": "Worked on projects and participated in hackathons as a part of the Tech domain. Held informative sessions for students on topics such as socket programming. Helped organise events such as WomenTechies '22, '23 and DevJams '22, in which I was a panel member for the judging process.",
             "techStack": [
                 "Golang",
                 "React",
@@ -23,10 +23,11 @@
             "end": "Present",
             "organisation": "BalkanID",
             "role": "Engineering Intern",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "description": "",
             "techStack": [
                 "Golang",
-                "React"
+                "React",
+                "AWS"
             ],
             "link": "https://www.balkan.id/"
         },
@@ -35,7 +36,7 @@
             "end": "Sept 2023",
             "organisation": "NITI Aayog",
             "role": "Research Intern",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "description": "Interned at NITI Aayog, the apex think tank of the Government of India, as part of the Science and Technology (S&T) Vertical. Built web pages and database schemas for some government projects. Constructed a well-received research report on FOSS (Free and Open Source Software) for Government in India, and associated opportunities, challenges and case studies.",
             "techStack": [
                 "FOSS",
                 "Tech Policy"
@@ -47,7 +48,7 @@
             "end": "July 2023",
             "organisation": "Credanic",
             "role": "Software Development Intern",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "description": "Built production-grade cross-platform mobile applications, and developed a Shopify store for an ecommerce platform. Developed a portal for a sports-oriented product with live information tracking.",
             "techStack": [
                 "React",
                 "React Native",
@@ -59,7 +60,7 @@
             "end": "Dec 2022",
             "organisation": "reunion",
             "role": "Frontend Development Intern",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc. Donec euismod, nisl eget ultricies aliquam, nunc nunc aliquet nunc, vitae aliquam nisl nunc eu nunc.",
+            "description": "Developed a zero-and-higher level UI-component library using Storybook.js in collaboration with a team, and set up a central styling control with data from Strapi. Created a subscription form for a real-estate info service.",
             "techStack": [
                 "React",
                 "Storybook.js",

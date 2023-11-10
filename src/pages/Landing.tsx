@@ -237,16 +237,16 @@ export default function Landing() {
               My <span className="special-cursor-element">Experience.</span>
             </h1>
             <div className="flex flex-col gap-16">
-              {experience.experience.map((exp) => (
-                <ExperienceCard {...exp} />
+              {experience.experience.map((exp, i) => (
+                <ExperienceCard key={i} {...exp} />
               ))}
             </div>
             <p className="text-2xl font-extralight mt-6 mb-4 group-hover/items:opacity-40 transition">
               Volunteering.
             </p>
             <div className="flex flex-col gap-16">
-              {experience.volunteering.map((exp) => (
-                <ExperienceCard {...exp} />
+              {experience.volunteering.map((exp, i) => (
+                <ExperienceCard key={i} {...exp} />
               ))}
             </div>
             <a
@@ -262,8 +262,8 @@ export default function Landing() {
               Selected <span className="special-cursor-element">Projects.</span>
             </h1>
             <div className="flex flex-col gap-16">
-              {projects.slice(0, 4).map((proj) => (
-                <ProjectShowcaseCard {...proj} />
+              {projects.slice(0, 4).map((proj, i) => (
+                <ProjectShowcaseCard key={i} {...proj} />
               ))}
             </div>
             <a
@@ -283,8 +283,8 @@ export default function Landing() {
           </div>
           <div id="misc" className="flex flex-col gap-3">
             <div className="flex flex-col gap-16">
-              {misc.map((m) => (
-                <MiscCard {...m} />
+              {misc.map((m, i) => (
+                <MiscCard key={i} {...m} />
               ))}
             </div>
           </div>

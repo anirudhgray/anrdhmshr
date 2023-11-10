@@ -11,7 +11,16 @@
         },
         {
             "type": "plaintext",
-            "content": ". I love building cool software, and till date I've done so at "
+            "content": ". My first proper experience with writing code (read: I didn't drop it after one sunday afternoon) was when I was 14 and I tried using Python for writing a discord bot for a server I was in. Those were baby steps (I remember not really understanding "
+        },
+        {
+            "type": "link",
+            "content": "what Git was",
+            "url": "https://xkcd.com/1597/"
+        },
+        {
+            "type": "plaintext",
+            "content": " and instead using discord-bot-really-really-final.py as my version control), but I've come a long way since then. I love building cool software, and till date I've done so at "
         },
         {
             "type": "link",
@@ -47,7 +56,7 @@
         },
         {
             "type": "plaintext",
-            "content": ". These days I'm usually working on Golang based projects."
+            "content": "."
         }
     ],
     [

@@ -17,6 +17,12 @@ function App() {
       // Prefer the color scheme (light/dark) from the system
       setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
+    // console log ascii art of "Hello there."
+    console.log(
+      `
+      Hello there. Feel free to have a look around — this website is open source at https://github.com/anirudhgray/anrdhmshr!
+      `,
+    );
   }, []);
 
   const toggleDarkMode = () => {
@@ -29,7 +35,7 @@ function App() {
     <div className="App dark:bg-[#141414] dark:text-white bg-slate-100">
       <CustomCursor />
       <ScrollToTop />
-      <div className="fixed top-0 right-0 m-4 z-10">
+      <div className="fixed top-0 right-0 m-4 z-20">
         {/* Dark mode toggle */}
         <label className="switch">
           <input

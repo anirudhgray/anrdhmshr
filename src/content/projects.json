@@ -1,17 +1,18 @@
 [
     {
         "name": "GDSC Ideas Portal",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "description": "Built the frontend for an idea proposals and discussion portal built for GDSC-VIT. I coordinated with a designer and a backend developer to build this site, which is designed to hold hundreds of ideas submitted by users, along with a status tracking and commenting system.",
         "link": "https://ideas.dscvit.com/",
         "image": "/ideas.png",
         "skills": [
             "React",
-            "Redux"
+            "Redux",
+            "Oauth"
         ]
     },
     {
         "name": "Riviera'23 and Gravitas'23 Websites",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "description": "Volunteered as a member of my university's technical team to build the websites for Riviera'23 (with over 30,000 students from 650+ colleges) and Gravitas'23, the annual cultural and technical festivals, respectively, of VIT Vellore. For the latter, I also coordinated the frontend team in integrating the payments gateway for merch and events registration.",
         "link": "https://en.wikipedia.org/wiki/Riviera_(festival)",
         "image": "/gravitas.png",
         "skills": [
@@ -24,8 +25,8 @@
     },
     {
         "name": "Nock",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
-        "link": "#",
+        "description": "Built the backend for a team-based meeting attendance app.",
+        "link": "https://github.com/GDGVIT/attendance-app-backend",
         "image": "/nock.png",
         "skills": [
             "Golang",
@@ -36,7 +37,7 @@
     },
     {
         "name": "Career Node",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vitae tortor blandit euismod. Sed euismod, nisl quis lacinia ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nunc eu nisl.",
+        "description": "Developed the frontend for a project built during the Yantra hackathon, as an attempt to devise cutting-edge technological solutions leveraging AI to empower individuals seeking educational and career transitions. The project won the education track at the hackathon.",
         "link": "https://github.com/anirudhgray/funtimeError",
         "image": "/careernode.png",
         "skills": [
