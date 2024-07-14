@@ -19,8 +19,7 @@ function App() {
     }
     // console log ascii art of "Hello there."
     console.log(
-      `
-      Hello there. Feel free to have a look around — this website is open source at https://github.com/anirudhgray/anrdhmshr!
+      `🥳 Hello there. Feel free to have a look around — this website is open source at https://github.com/anirudhgray/anrdhmshr!
       `,
     );
   }, []);

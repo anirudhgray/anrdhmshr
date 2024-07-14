@@ -1,10 +1,6 @@
 [
     [
         {
-            "type": "plaintext",
-            "content": "I'm a 19 year old student studying CS at "
-        },
-        {
             "type": "link",
             "content": "VIT",
             "url": "https://vit.ac.in/"
@@ -47,7 +43,7 @@
         },
         {
             "type": "plaintext",
-            "content": " and (soon) "
+            "content": " and "
         },
         {
             "type": "link",

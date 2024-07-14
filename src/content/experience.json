@@ -15,15 +15,36 @@
                 "PostgreSQL"
             ],
             "link": "https://dscvit.com/"
+        },
+        {
+            "start": "Dec 2021",
+            "end": "Mar 2023",
+            "organisation": "Student Technical Community",
+            "role": "Core Member",
+            "description": "",
+            "techStack": []
         }
     ],
     "experience": [
+        {
+            "start": "June 2024",
+            "end": "July 2024",
+            "organisation": "Well Fargo",
+            "role": "Intern Analyst",
+            "description": "Engineered a parser to define and consume complex trading strategies while keeping in mind flexibility (via 10+ comparators and operators) and end-user modularity. Added support for 15 technical indicators, with in-depth documentation on how to add custom indicators. Built a CLI and a Web App to interact with the above backend for easy usage of the app, and visualised 8 metrics using an interactive graphic dashboard.",
+            "techStack": [
+                "Python",
+                "React",
+                "Backtesting"
+            ],
+            "link": "https://www.wellsfargo.com/"
+        },
         {
             "start": "Nov 2023",
             "end": "Present",
             "organisation": "BalkanID",
             "role": "Engineering Intern",
-            "description": "",
+            "description": "Assisted in development of end-to-end features on the BalkanID core application, on the app frontend as well as in the data pipeline and API (such as a consolidated action centre). Wrote a CLI tool to interact with 10 download APIs with support for associated parameters. Integrated tooling for product walkthroughs and AI access to help docs, and helped author a detailed internal document for development related to it.",
             "techStack": [
                 "Golang",
                 "React",
