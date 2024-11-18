@@ -137,11 +137,11 @@ export default function Landing() {
       {/* progress bar fixed at bottom */}
       <div
         // style={{ opacity: scrollOpacityTransform }}
-        className="fixed bottom-0 left-0 w-full h-3 bg-gray-400 dark:bg-gray-700 z-20"
+        className="fixed bottom-0 left-0 w-full h-3 dark:bg-[#141414] bg-slate-100 z-20"
       >
         <motion.div
           style={{ width: progressWidthTransform }}
-          className="h-full dark:bg-[#141414] bg-slate-100"
+          className="h-full bg-gray-400 dark:bg-gray-700"
         ></motion.div>
       </div>
       <motion.div
