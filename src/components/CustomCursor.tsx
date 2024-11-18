@@ -22,7 +22,25 @@ const CustomCursor: React.FC = () => {
   const { inc } = useStore();
 
   useEffect(() => {
+    if (!hasMouse) {
+      document.body.style.cursor = 'auto';
+      document.querySelectorAll('*').forEach((el) => {
+        el.getAttribute('style') &&
+          el.setAttribute(
+            'style',
+            el.getAttribute('style') + 'cursor: auto !important;',
+          );
+      });
+    }
     if (hasMouse) {
+      document.body.style.cursor = 'none';
+      document.querySelectorAll('*').forEach((el) => {
+        el.getAttribute('style') &&
+          el.setAttribute(
+            'style',
+            el.getAttribute('style') + 'cursor: none !important;',
+          );
+      });
       const updatePosition = (e: MouseEvent | Event) => {
         setPosition({
           x: (e as MouseEvent).clientX,

@@ -43,7 +43,7 @@ function App() {
             onChange={toggleDarkMode}
             tabIndex={0}
           />
-          <span className="slider round pointer-cursor-element"></span>
+          <span className="slider round pointer-cursor-element cursor-pointer"></span>
         </label>
       </div>
       <Router>
