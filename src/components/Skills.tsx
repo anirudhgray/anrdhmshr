@@ -18,7 +18,13 @@ import {
   SiNextdotjs,
   SiSocketdotio,
   SiWebassembly,
+  SiKubernetes,
+  SiCloudflare,
+  SiNginx,
+  SiGraphql,
+  SiGit,
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 export default function Skills() {
   return (
     <div className="flex flex-wrap gap-4 mt-3 item-center lg:text-4xl text-5xl dark:text-gray-400 text-gray-500">
@@ -40,6 +46,16 @@ export default function Skills() {
       >
         <span className="pointer-events-none">
           <SiWebassembly title="WebAssembly" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://www.java.com/"
+        target="_blank"
+        aria-label="Java"
+      >
+        <span className="pointer-events-none">
+          <FaJava title="Java" />
         </span>
       </a>
       <a
@@ -90,6 +106,56 @@ export default function Skills() {
       >
         <span className="pointer-events-none">
           <SiDocker title="Docker" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://kubernetes.io/"
+        target="_blank"
+        aria-label="Kubernetes"
+      >
+        <span className="pointer-events-none">
+          <SiKubernetes title="Kubernetes" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://cloudflare.com/"
+        target="_blank"
+        aria-label="Cloudflare"
+      >
+        <span className="pointer-events-none">
+          <SiCloudflare title="Cloudflare" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://nginx.com/"
+        target="_blank"
+        aria-label="Nginx"
+      >
+        <span className="pointer-events-none">
+          <SiNginx title="Nginx" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://graphql.org/"
+        target="_blank"
+        aria-label="GraphQL"
+      >
+        <span className="pointer-events-none">
+          <SiGraphql title="GraphQL" />
+        </span>
+      </a>
+      <a
+        className="dark:hover:text-white pointer-cursor-element hover:text-black"
+        href="https://git-scm.com/"
+        target="_blank"
+        aria-label="Git"
+      >
+        <span className="pointer-events-none">
+          <SiGit title="Git" />
         </span>
       </a>
       <a

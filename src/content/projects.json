@@ -1,5 +1,16 @@
 [
     {
+        "name": "Tahini",
+        "description": "A dynamic, interpreted and impurely functional programming language with testing and design-by-contract features.",
+        "link": "https://github.com/anirudhgray/tahini-lang",
+        "image": "/tahini-logo.png",
+        "skills": [
+            "Java",
+            "Compiler Design",
+            "Design by Contract"
+        ]
+    },
+    {
         "name": "GDSC Ideas Portal",
         "description": "Built the frontend for an idea proposals and discussion portal built for GDSC-VIT. I coordinated with a designer and a backend developer to build this site, which is designed to hold hundreds of ideas submitted by users, along with a status tracking and commenting system.",
         "link": "https://ideas.dscvit.com/",

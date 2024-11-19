@@ -15,14 +15,6 @@
                 "PostgreSQL"
             ],
             "link": "https://dscvit.com/"
-        },
-        {
-            "start": "Dec 2021",
-            "end": "Mar 2023",
-            "organisation": "Student Technical Community",
-            "role": "Core Member",
-            "description": "",
-            "techStack": []
         }
     ],
     "experience": [
@@ -41,7 +33,7 @@
         },
         {
             "start": "Nov 2023",
-            "end": "Present",
+            "end": "May 2024",
             "organisation": "BalkanID",
             "role": "Engineering Intern",
             "description": "Assisted in development of end-to-end features on the BalkanID core application, on the app frontend as well as in the data pipeline and API (such as a consolidated action centre). Wrote a CLI tool to interact with 10 download APIs with support for associated parameters. Integrated tooling for product walkthroughs and AI access to help docs, and helped author a detailed internal document for development related to it.",

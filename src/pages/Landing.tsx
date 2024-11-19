@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import '@lottiefiles/lottie-player';
 import { create } from '@lottiefiles/lottie-interactivity';
 import Skills from '../components/Skills';
-import experience from '../content/experience.json';
+import experienceData from '../content/experience.json';
 import projects from '../content/projects.json';
 import misc from '../content/misc.json';
 import about from '../content/about.json';
@@ -13,7 +13,11 @@ import ProjectShowcaseCard from '../components/ProjectShowcaseCard';
 import MiscCard from '../components/MiscCard';
 import ContentRenderer from '../components/ContentRenderer';
 
+import { ExperienceData } from '../types/experience';
+
 export default function Landing() {
+  const [experience] = useState<ExperienceData>(experienceData);
+
   const mainRef = useRef<HTMLDivElement | null>(null);
   const [parentWidth, setParentWidth] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
@@ -237,17 +241,29 @@ export default function Landing() {
               My <span className="special-cursor-element">Experience.</span>
             </h1>
             <div className="flex flex-col gap-16">
-              {experience.experience.map((exp, i) => (
-                <ExperienceCard key={i} {...exp} />
-              ))}
+              {experience.experience.length ? (
+                experience.experience.map((exp, i) => (
+                  <ExperienceCard key={i} {...exp} />
+                ))
+              ) : (
+                <p className="dark:text-gray-400 font-extralight text-gray-500 group-hover/items:opacity-40 transition">
+                  Loading experience...
+                </p>
+              )}
             </div>
             <p className="text-2xl font-extralight mt-6 mb-4 group-hover/items:opacity-40 transition">
               Volunteering.
             </p>
             <div className="flex flex-col gap-16">
-              {experience.volunteering.map((exp, i) => (
-                <ExperienceCard key={i} {...exp} />
-              ))}
+              {experience.volunteering.length ? (
+                experience.volunteering.map((exp, i) => (
+                  <ExperienceCard key={i} {...exp} />
+                ))
+              ) : (
+                <p className="dark:text-gray-400 font-extralight text-gray-500 group-hover/items:opacity-40 transition">
+                  Loading volunteership...
+                </p>
+              )}
             </div>
             <a
               target="_blank"
