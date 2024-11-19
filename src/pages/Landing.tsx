@@ -118,7 +118,7 @@ export default function Landing() {
     const observer = new IntersectionObserver(handleIntersection, {
       // root: contentRef.current,
       rootMargin: '0px',
-      threshold: 0.8, // Adjust the threshold as needed
+      threshold: 0.8,
     });
 
     // Observe the sections
@@ -267,7 +267,7 @@ export default function Landing() {
             </div>
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
+              href={import.meta.env.VITE_RESUME_URL}
               className="pointer-cursor-element hover:underline w-fit mt-8"
             >
               See full résumé
@@ -284,7 +284,7 @@ export default function Landing() {
             </div>
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/10Rv4tAT-psos1S44cK0yNqsP2Mqcgz3v/view?usp=sharing"
+              href={import.meta.env.VITE_RESUME_URL}
               className="pointer-cursor-element hover:underline w-fit mt-8"
             >
               See all projects

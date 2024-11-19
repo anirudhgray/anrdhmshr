@@ -55,30 +55,6 @@
                 "Tech Policy"
             ],
             "link": "https://niti.gov.in/"
-        },
-        {
-            "start": "May 2023",
-            "end": "July 2023",
-            "organisation": "Credanic",
-            "role": "Software Development Intern",
-            "description": "Built production-grade cross-platform mobile applications, and developed a Shopify store for an ecommerce platform. Developed a portal for a sports-oriented product with live information tracking.",
-            "techStack": [
-                "React",
-                "React Native",
-                "Shopify"
-            ]
-        },
-        {
-            "start": "Sept 2022",
-            "end": "Dec 2022",
-            "organisation": "reunion",
-            "role": "Frontend Development Intern",
-            "description": "Developed a zero-and-higher level UI-component library using Storybook.js in collaboration with a team, and set up a central styling control with data from Strapi. Created a subscription form for a real-estate info service.",
-            "techStack": [
-                "React",
-                "Storybook.js",
-                "Strapi"
-            ]
         }
     ]
 }
